@@ -1,0 +1,121 @@
+// Variables for colors and font styles
+$primary-color: #1e90ff;
+$secondary-color: #f0f0f0;
+$error-color: #ff4d4d;
+$font-family: 'Arial', sans-serif;
+
+// Base styles
+body {
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: $secondary-color;
+  color: #333;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: $primary-color;
+  color: white;
+
+  div {
+    &:first-child {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    &:last-child {
+      font-size: 1rem;
+    }
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 2rem;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 1rem;
+  // color: adjust-color($primary-color, $lightness: -20%);
+}
+
+// Form styles
+form {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+  // border: 1px solid adjust-color($primary-color, $lightness: 30%);
+  border-radius: 5px;
+
+  div {
+    margin-bottom: 1rem;
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    input[type="text"],
+    input[type="date"] {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    #city_error,
+    #date_error {
+      font-size: 0.875rem;
+      color: $error-color;
+    }
+  }
+
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+}
+
+// Details section
+#details {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background-color: white;
+  // border: 1px solid adjust-color($primary-color, $lightness: 40%);
+  border-radius: 5px;
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+  .cityPic {
+    margin-top: 1rem;
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: $primary-color;
+  color: white;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travel app planner</title>
+</head>
+<body> 
+    <header>
+        <div class="">
+            Logo
+        </div>
+        <div class="">
+            navigation
+        </div>
+    </header>
+    <h1>Travel App Planner</h1>
+    <h2>Where are you need to go?</h2>
+    <!-- the form for location and Date -->
+    <form id="travelForm" onsubmit="return Client.handleSubmit(event)">
+        <div>
+            <label for="location">Location:</label>
+            <input type="text" id="city" name="city">
+            <div id="city_error" style="color: red"></div>
+        </div>
+        <div>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+            <div id="date_error" style="color: red"></div>
+        </div>
+        <button>Submit</button>
+    </form>
+    <!-- the output details about this location -->
+    <div id="details">
+        <h2 id="days"></h2>
+        <p class="cityName"></p>
+        <p class="temp"></p>
+        <p class="max-temp"></p>
+        <p class="min-temp"></p>
+        <p class="weather"></p>
+        <div class="cityPic"></div>
+    </div>
+    <footer>
+        <p>This is a footer</p>
+    </footer>
+</body>
+</html>
