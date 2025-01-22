@@ -22,9 +22,7 @@ This is a travel app that allows users to search for information about a specifi
    git clone https://github.com/BaselTurkman/Travel-App
    ```
 2. Navigate to the project directory:
-   ```bash
-   cd NLP-Project
-   ```
+
 3. Install dependencies:
    ```bash
    npm install
