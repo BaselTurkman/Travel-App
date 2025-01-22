@@ -1,4 +1,7 @@
 import { calculateRemainingDays } from './RemainingDays';
+import { getWeather } from './getWeather';
+import { getCity } from './getCity';
+import { getCityPicture } from './getCityPicture';
 
 const dateInp = document.getElementById("date");
 const city = document.getElementById("city");
@@ -27,6 +30,7 @@ const handleSubmit = async (event) => {
   }
   // Get the location details
   const { lng, lat, city } = location;
+  console.log(`lat : ${lat},  lng : ${lng}`)
   const date = dateInp.value;
   const remainingDays = calculateRemainingDays(date);
   // Get the weather data
@@ -65,51 +69,6 @@ const updateUI = (remainingDays, city, weather, getCityPic) => {
     `<img src="${imgSrc}" alt="An image that describes the ${city} nature">`;
 
   document.querySelector("#details").style.display = "block";
-}
-
-const getWeather = async (longitude, latitude, remainingDays) => {
-  const response = await fetch("http://localhost:8000/getWeather", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      lat: latitude,
-      lng: longitude,
-      remainingDays
-    })
-  });
-  const data = await response.json();
-  return data;
-}
-
-
-const getCity = async () => {
-  const response = await fetch("http://localhost:8000/getCity", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      city: city.value
-    })
-  });
-  const data = await response.json();
-  return data;
-}
-
-const getCityPicture = async (city) => {
-  const response = await fetch("http://localhost:8000/getCityPicture", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      city
-    })
-  });
-  const data = await response.json();
-  return data;
 }
 
 const isValidInput = () => {
